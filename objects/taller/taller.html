@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- script de A-Frane version1 1.0.0 -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- script de AR.JS con soporte de marker + location -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <script src="../registerevents.js"></script>
+
+    <link rel="stylesheet" href="../marker.css">
+
+</head>
+<body style="margin : 0px; overflow: hidden;">
+
+<div class="marker-loader">
+    <div id="marker-status"></div>
+</div>
+
+<a-scene camera>
+    <!--<a-marker type='pattern' url='./pattern-qr-code_1.patt' registerevents>-->
+    <a-marker preset="hiro" registerevents>
+        <a-entity position="0 0 0" scale="">
+            <a-image src="./make_software.jpg" position="0 0 0" rotation="-90 0 0" scale="5 4 5" geometry=""></a-image>
+        </a-entity>
+    </a-marker>
+</a-scene>
+</body>
+</html>
