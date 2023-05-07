@@ -15,8 +15,6 @@ if (isset($_POST['comment'])) {
         $folder = $_POST['folder'];
     }
 
-    header("Location: /ar-museum/v1/ar-item.php?id=$id&f=$folder ");
-
 }
 
 ?>

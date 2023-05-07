@@ -18,12 +18,13 @@
 </div>
 
 <a-scene camera>
-    <!--<a-marker type='pattern' url='./pattern-qr-code_1.patt' registerevents>-->
-    <a-marker preset="hiro" registerevents>
-        <a-entity position="0 0 0" scale="">
-            <a-image src="./make_software.jpg" position="0 0 0" rotation="-90 0 0" scale="5 4 5" geometry=""></a-image>
-        </a-entity>
+    <a-marker preset='kanji' registerevents>
+        <a-text  position= "-3 -5 -2" rotation="-90 0 0" scale="2 2 2" value="Make Software change the world" color="red" ></a-text>
     </a-marker>
+    <a-marker type='pattern' url='./pattern-c-logo.patt' registerevents>
+        <a-image src="./make_software.jpg" position= "0 0 0" rotation="-90 0 0" scale="10 10 10"></a-image>
+    </a-marker>
+
 </a-scene>
 </body>
 </html>

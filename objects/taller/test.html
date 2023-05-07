@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Marcadores con códigos QR en A-Frame</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> <!-- Importa A-Frame -->
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+  <script src="https://unpkg.com/jsqr@1.0.6/dist/jsQR.js"></script> <!-- Importa jsQR -->
+</head>
+<body>
+<a-scene>
+  <a-marker preset="hiro"> <!-- Crea el marcador con un patrón predefinido -->
+    <a-entity position="0 0 0"> <!-- Contenido que se mostrará en el marcador -->
+      <a-box color="red" scale="0.5 0.5 0.5"></a-box>
+    </a-entity>
+  </a-marker>
+  <a-entity camera></a-entity> <!-- Agrega una cámara a la escena -->
+</a-scene>
+
+<script>
+  // Obtén la entidad del marcador por su ID
+  var marcador = document.querySelector('a-marker');
+
+  // Agrega un evento de escaneo de código QR al marcador
+  marcador.addEventListener('markerFound', function (event) {
+    // Obtiene el contexto de la imagen del marcador
+    var contexto = marcador.components.marker.context;
+
+    // Lee los datos de la imagen del marcador
+    var datosImagen = contexto.getImageData(0, 0, contexto.canvas.width, contexto.canvas.height);
+
+    // Decodifica los datos de la imagen usando jsQR
+    var resultado = jsQR(datosImagen.data, datosImagen.width, datosImagen.height);
+
+    if (resultado) {
+      // Si se encuentra un código QR, realiza la acción correspondiente en tu escena de A-Frame
+      // (por ejemplo, cambia la apariencia del marcador, muestra contenido adicional, etc.)
+      console.log('Código QR escaneado:', resultado.data);
+    }
+  });
+</script>
+</body>
+</html>

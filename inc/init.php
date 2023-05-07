@@ -7,13 +7,14 @@ session_start();
 
 if (strpos(getcwd(), "jt000297")) {
     // PROD ENVIRONMENT /home/jt000297/public_html/ttriage/ar/v1
-    define ( 'ALLOWED_HOSTS', 'ttriage.com');
+    define ( 'ROOT_WEB',   '/ar/taller/objects/');
+    define ( 'ALLOWED_HOSTS', 'clarolab.com');
 } else {
     // DEV ENVIRONMENT
-    define ( 'ROOT_WEB',   '/ar-taller/objects/');
-    define ( 'ALLOWED_HOSTS','localhost,127.0.0.1,ttriage.com');
+    define ( 'ROOT_WEB',   '/taller/objects/');
+    define ( 'ALLOWED_HOSTS','localhost,127.0.0.1,clarolab.com');
 }
-define ( 'ROOT_FOLDER',   '../objects/');
+define ( 'ROOT_FOLDER',   'objects/');
 define ( 'ROOT_TYPES',   ROOT_FOLDER . 'types.json');
 
 function logit($text) {
