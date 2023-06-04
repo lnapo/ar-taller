@@ -59,7 +59,7 @@ if (isset($_POST['comment'])) {
         <div id="card" class="ar-card" style="flex: 1;  max-height: 90%;">
 
             <div class="ar-container-wrapper">
-                <iframe src="<?=ROOT_WEB . $folder . "/" . $item->html;?>" width="100%" height="100%" class="ar-card-iframe"></iframe>
+                <iframe src="multitarget.html" width="100%" height="100%" class="ar-card-iframe"></iframe>
             </div>
         </div>
 
